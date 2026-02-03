@@ -1,0 +1,58 @@
+@use "../../styles/colors" as c;
+@use "../../styles/fonts" as f;
+@use "../../styles/mixins" as m;
+
+.heroSection {
+  display: flex;
+  min-height: calc(100vh - 100px); // altura da tela menos o header
+}
+
+.heroContent {
+  flex: 1;
+  padding: 40px;
+}
+
+.heroTitle {
+  @include m.estilizacaoFontsTituloPrincipal();
+  color: c.$color-blue;
+}
+
+.heroText {
+  @include m.estilizacaoFontsTexto();
+}
+
+.heroBtn {
+  background-color: c.$color-red;
+  color: c.$color-white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  @include m.estilizacaoFontsBotao();
+}
+
+.heroImage {
+  flex: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.statItem {
+  h3 {
+    @include m.estilizacaoFontsCards();
+    color: c.$color-blue;
+  }
+  p {
+    @include m.estilizacaoFontsParagrafo();
+  }
+}

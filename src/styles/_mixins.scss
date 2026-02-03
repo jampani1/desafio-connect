@@ -1,0 +1,49 @@
+@use "../styles/fonts" as f;
+
+@mixin containerFlexivelBetween() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin tamanhoForcaFonte($font, $size, $weight) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin estilizacaoFontsTituloPrincipal() {
+  font-family: f.$font-source;
+  font-size: 90px;
+  font-weight: bold;
+}
+
+@mixin estilizacaoFontsTituloAuxiliar() {
+  font-family: f.$font-source;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+@mixin estilizacaoFontsTexto() {
+  font-family: f.$font-inter;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+@mixin estilizacaoFontsParagrafo() {
+  font-family: f.$font-inter;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@mixin estilizacaoFontsBotao() {
+  font-family: f.$font-source;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@mixin estilizacaoFontsCards() {
+  font-family: f.$font-source;
+  font-size: 30px;
+  font-weight: bold;
+}

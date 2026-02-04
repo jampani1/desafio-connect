@@ -4,7 +4,7 @@
 
 .heroSection {
   display: flex;
-  min-height: calc(100vh - 100px); // altura da tela menos o header
+  flex: 1;
 }
 
 .heroContent {
@@ -15,10 +15,13 @@
 .heroTitle {
   @include m.estilizacaoFontsTituloPrincipal();
   color: c.$color-blue;
+  margin-top: 25px;
+  font-size: 110px
 }
 
 .heroText {
   @include m.estilizacaoFontsTexto();
+  font-size: 30px;
 }
 
 .heroBtn {
@@ -28,16 +31,20 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 20px;
   @include m.estilizacaoFontsBotao();
 }
 
 .heroImage {
-  flex: 1;
+  flex: 0.6;
+  overflow: hidden;
+  max-height: calc(100vh - 140px);
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top; 
   }
 }
 

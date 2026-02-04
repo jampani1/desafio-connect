@@ -1,10 +1,24 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo_certa.png";
 import S from "./header.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 export default function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+    function menuMobile() {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setMenuAberto(false);
+      }
+    }
+
+    window.addEventListener("resize", menuMobile);
+    return () => window.removeEventListener("resize", menuMobile);
+  }, []);
 
   return (
     <>
@@ -29,7 +43,7 @@ export default function Header() {
             Mentorias
           </Link>
           <Link className={S.link} to="/eventosEP">
-            Eventos
+            Eventos & Palestras
           </Link>
         </nav>
         <img
@@ -43,7 +57,40 @@ export default function Header() {
         <Link to={"/usuario"}>Vincius Bispo</Link>
         <Link>Meu Voluntariado</Link>
         <Link>Configurações de conta</Link>
-        <Link>Sair</Link>
+        {isMobile && (
+          <div>
+            <Link
+              className={S.link}
+              to="/doacao"
+              onClick={() => setMenuAberto(false)}
+            >
+              Doação
+            </Link>
+            <Link
+              className={S.link}
+              to="/voluntariado"
+              onClick={() => setMenuAberto(false)}
+            >
+              Voluntariado
+            </Link>
+            <Link
+              className={S.link}
+              to="/mentoria"
+              onClick={() => setMenuAberto(false)}
+            >
+              Mentorias
+            </Link>
+            <Link
+              className={S.link}
+              to="/eventosEP"
+              onClick={() => setMenuAberto(false)}
+            >
+              Eventos & Palestras
+            </Link>
+          </div>
+        )}
+
+        <Link onClick={() => setMenuAberto(false)}>Sair</Link>
       </nav>
     </>
   );

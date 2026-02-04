@@ -7,3 +7,15 @@
   list-style: none;
   text-decoration: none;
 }
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+

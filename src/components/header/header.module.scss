@@ -4,12 +4,12 @@
 
 .header {
   // border: solid 2px red;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: c.$color-blue;
-  padding: 0 70px;
+  padding: 0 85px;
   position: relative;
   .imgLogo {
     max-width: 80px;
@@ -23,7 +23,7 @@
     justify-content: space-between;
     .link {
       color: c.$color-white;
-      font-size: 22px;
+      font-size: 18px;
       font-family: f.$font-source;
       padding: 5px 20px;
     }
@@ -39,7 +39,7 @@
 .navUser {
   position: absolute;
   right: 30px;
-  top: 100px;
+  top: 80px;
   background-color: c.$color-blue;
   a {
     display: block;
@@ -51,4 +51,15 @@
 
 .closedNav {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    .nav {
+      display: none;
+    }
+  }
+  .imgLogo {
+    max-width: 57px;
+  }
 }

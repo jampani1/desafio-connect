@@ -1,0 +1,10 @@
+@use "../../styles/colors" as c;
+@use "../../styles/fonts" as f;
+@use "../../styles/mixins" as m;
+
+.footer {
+    background-color: c.$color-gray;
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+}

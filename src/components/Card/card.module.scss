@@ -1,0 +1,44 @@
+@use "../../styles/colors" as c;
+@use "../../styles/fonts" as f;
+@use "../../styles/mixins" as m;
+
+.CTA {
+    text-align: center;
+    max-width: 500px;
+    padding: 0 30px;
+    border-right: 1px solid #c0c0c0;
+
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+        border-right: none;
+    }
+
+    img {
+        border-radius: 8px;
+        max-width: 300px;
+    }
+}
+
+.CTAtitle {
+    @include m.estilizacaoFontsCards();
+    color: c.$color-blue;
+    margin: 15px 0px;
+}
+
+.CTAtext {
+    @include m.estilizacaoFontsParagrafo();
+    margin-bottom: 20px;
+}
+
+.CTAbtn {
+    background-color: c.$color-blue;
+    color: c.$color-white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    @include m.estilizacaoFontsBotao();
+    margin-top: auto;
+}
